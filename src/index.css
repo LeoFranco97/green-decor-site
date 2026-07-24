@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-h: 76px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Compensa o header fixo ao navegar por âncoras */
+  [id] {
+    scroll-margin-top: calc(var(--header-h) + 12px);
+  }
+
+  body {
+    @apply bg-marfim text-tinta font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: #12372d;
+    color: #f7f4ed;
+  }
+
+  :focus-visible {
+    outline: 2px solid #be9a3c;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Scrollbar discreta */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: #cdd8ce; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #b7c4b4; }
+}
+
+@layer components {
+  .container-editorial {
+    @apply mx-auto w-full max-w-editorial px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[11px] sm:text-xs font-semibold uppercase tracking-eyebrow;
+  }
+
+  /* Botões */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-sans text-sm font-semibold
+           transition duration-300 ease-soft min-h-[48px] px-7 select-none;
+  }
+  .btn-primary {
+    @apply btn bg-marca text-marfim hover:bg-floresta hover:shadow-float active:scale-[.98];
+  }
+  .btn-gold {
+    @apply btn bg-dourado text-floresta hover:bg-dourado-claro active:scale-[.98];
+  }
+  .btn-outline {
+    @apply btn border border-marca/30 text-marca hover:border-marca hover:bg-marca hover:text-marfim;
+  }
+  .btn-outline-light {
+    @apply btn border border-marfim/50 text-marfim hover:bg-marfim hover:text-floresta;
+  }
+  .btn-ghost {
+    @apply btn text-marca hover:text-dourado px-4;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-current
+           after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .hairline { @apply h-px w-full bg-tinta/10; }
+}
+
+@layer utilities {
+  /* Revelação de entrada (IntersectionObserver adiciona .is-visible) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 2px 30px rgba(9, 28, 22, 0.35);
+  }
+
+  .bg-grain {
+    background-image: radial-gradient(rgba(20, 45, 40, 0.045) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+/* Movimento reduzido: desliga animações de entrada, ken burns e smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
