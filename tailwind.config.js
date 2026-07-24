@@ -4,21 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        marca: '#154741',        // verde institucional
-        floresta: '#12372D',     // verde-floresta profundo
-        'verde-esc': '#0E2E25',  // verde mais profundo (fundos)
-        'verde-claro': '#1F493B',
-        salvia: '#8DA493',
-        'salvia-claro': '#B8C5B7',
+        marca: '#4A5834',        // verde-sálvia institucional (botões, texto sobre claro)
+        floresta: '#39452B',     // sálvia profundo (fundos escuros)
+        'verde-esc': '#262E1B',  // sálvia mais profundo (rodapé, overlays)
+        'verde-claro': '#5C6B40',
+        salvia: '#8E9A78',       // tom exato da referência (verde-sálvia)
+        'salvia-claro': '#B7C1A2',
         dourado: '#BE9A3C',
         'dourado-claro': '#D8BC72',
         marfim: '#F7F4ED',
         'marfim-esc': '#EEE8DB',
         card: '#FFFEFB',
         bege: '#DBCEBC',
-        grafite: '#27352F',
-        tinta: '#25302B',        // texto sobre claro
-        'tinta-suave': '#5C665E',
+        grafite: '#2E3325',
+        tinta: '#282C20',        // texto sobre claro (olive escuro)
+        'tinta-suave': '#5C6150',
         erro: '#A93B30',
         sucesso: '#3E7C4F',
       },
