@@ -17,9 +17,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 
-    <!-- Canonical (ajustar ao domínio final) -->
-    <!-- TODO: trocar pelo domínio real quando publicado -->
-    <link rel="canonical" href="https://www.greendecor.com.br/" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://greenfloresdecor.com.br/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -30,8 +29,8 @@
       property="og:description"
       content="Da flor ao mobiliário, transformamos espaços em experiências. Projetos, móveis, flores, cortinas e curadoria."
     />
-    <meta property="og:url" content="https://www.greendecor.com.br/" />
-    <meta property="og:image" content="./og.jpg" />
+    <meta property="og:url" content="https://greenfloresdecor.com.br/" />
+    <meta property="og:image" content="https://greenfloresdecor.com.br/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -42,7 +41,7 @@
       name="twitter:description"
       content="Da flor ao mobiliário, transformamos espaços em experiências."
     />
-    <meta name="twitter:image" content="./og.jpg" />
+    <meta name="twitter:image" content="https://greenfloresdecor.com.br/og.jpg" />
 
     <!-- Preload da imagem do hero (respeita as fontes responsivas) -->
     <link rel="preload" as="image" href="./fotos/hero-sala.jpg" media="(min-width: 768px)" fetchpriority="high" />
@@ -57,9 +56,10 @@
     />
 
     <!--
-      Schema.org - usa apenas dados confirmados. Endereço, telefone, geo,
-      avaliações e horários NÃO foram incluídos por não estarem confirmados
-      nos arquivos da marca. Completar em src/data/site.ts e aqui quando reais.
+      Schema.org com os dados do Manual de Marca do Grupo Green (ago/2026).
+      Telefone e endereço vieram do cartão de visita do manual: conferir com a
+      loja antes de considerar definitivo. Horários e avaliações seguem fora
+      porque não foram confirmados.
     -->
     <script type="application/ld+json">
       {
@@ -67,7 +67,19 @@
         "@type": "HomeGoodsStore",
         "name": "Green Decor",
         "alternateName": "Green Flor & Decor",
+        "url": "https://greenfloresdecor.com.br/",
+        "image": "https://greenfloresdecor.com.br/og.jpg",
         "description": "Decoração de interiores, mobiliário, floricultura, cortinas, persianas e curadoria de ambientes.",
+        "telephone": "+55 47 99252-1535",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3ª Avenida, 333, sala 01",
+          "addressLocality": "Itapema",
+          "addressRegion": "SC",
+          "postalCode": "88220-000",
+          "addressCountry": "BR"
+        },
+        "sameAs": ["https://instagram.com/greenfloresdecor"],
         "parentOrganization": { "@type": "Organization", "name": "Grupo Green" },
         "areaServed": { "@type": "State", "name": "Santa Catarina" },
         "knowsAbout": ["Decoração de interiores", "Mobiliário", "Floricultura", "Cortinas e persianas", "Ambientação"]

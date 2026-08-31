@@ -10,28 +10,29 @@ export const asset = (path: string): string =>
 /* ------------------------------------------------------------------ *
  *  DADOS DE CONTATO
  *
- *  ATENÇÃO: nenhum dado de contato foi confirmado nos arquivos da marca.
- *  Os campos abaixo estão VAZIOS de propósito para não exibir informação
- *  fictícia ao visitante. Preencha com os dados reais antes de publicar.
+ *  Origem: Manual de Marca do Grupo Green (cartão de visita, ago/2026).
+ *  CONFIRMAR com a loja antes de divulgar: existem dois numeros de
+ *  WhatsApp no manual, (47) 99252-1535 e (47) 99287-0007. Ficou o
+ *  primeiro. Trocar aqui se o atendimento do site for o outro.
  *
- *  - whatsapp: somente dígitos, formato internacional. Ex.: '5547999998888'
- *  - instagram / phone / email / address: strings reais
- *
- *  Enquanto vazios, os botões de WhatsApp/Instagram levam o usuário ao
- *  formulário de contato em vez de abrir um número/perfil inexistente.
+ *  - whatsapp: somente dígitos, formato internacional
+ *  - email e hours seguem vazios porque não constam do manual; enquanto
+ *    vazios, os blocos correspondentes simplesmente não aparecem.
  * ------------------------------------------------------------------ */
 export const CONTACT = {
-  whatsapp: '', // TODO: preencher (ex.: '5547999998888')
-  instagram: '', // TODO: preencher URL (ex.: 'https://instagram.com/greendecor')
-  instagramHandle: '', // TODO: ex.: '@greendecor'
-  phone: '', // TODO: telefone de exibição (ex.: '(47) 99999-8888')
-  email: '', // TODO: e-mail de atendimento
+  whatsapp: '5547992521535',
+  instagram: 'https://instagram.com/greenfloresdecor',
+  instagramHandle: '@greenfloresdecor',
+  phone: '(47) 99252-1535',
+  email: '', // não consta do manual de marca
   /** Endereço completo. Deixe null enquanto não confirmado. */
-  address: null as null | {
-    street: string
-    city: string
-    mapsUrl: string
-  },
+  address: {
+    street: '3ª Avenida, 333, sala 01',
+    city: 'Meia Praia, Itapema/SC',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=' +
+      encodeURIComponent('3ª Avenida, 333, Meia Praia, Itapema, SC, 88220-000'),
+  } as null | { street: string; city: string; mapsUrl: string },
   /** Horário de atendimento. Deixe null enquanto não confirmado. */
   hours: null as null | string,
 } as const
